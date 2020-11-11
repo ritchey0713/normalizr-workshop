@@ -11,8 +11,8 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  artist: artistReducer,
-  song: songReducer,
+  artists: artistReducer,
+  songs: songReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

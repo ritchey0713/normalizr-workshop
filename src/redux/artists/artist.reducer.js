@@ -8,6 +8,7 @@ const artistReducer = (state = INITIAL_STATE, action) => {
     case ArtistActionTypes.SET_ARTISTS:
       return {
         ...state,
+        artistCollections: action.artists.entities.artists,
       };
     default:
       return state;
