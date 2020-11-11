@@ -1,7 +1,9 @@
 import React from "react";
 
 const Artist = ({ artists, ...otherProps }) => {
-  const artist = artists[otherProps.match.params.id];
+  const artist = artists.find(
+    (artist) => artist.id === parseInt(otherProps.match.params.id)
+  );
   return (
     <div>
       <br />

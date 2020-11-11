@@ -1,14 +1,14 @@
 import ArtistActionTypes from "./artist.types";
 
 const INITIAL_STATE = {
-  artistCollections: {},
+  artistCollections: [],
 };
 const artistReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ArtistActionTypes.SET_ARTISTS:
       return {
         ...state,
-        artistCollections: action.artists.entities.artists,
+        artistCollections: action.artists,
       };
     default:
       return state;
