@@ -4,9 +4,11 @@ import { connect } from "react-redux";
 import { startSetArtists } from "./redux/artists/artist.actions";
 import ArtistForm from "./components/ArtistForm.component";
 import ArtistContainer from "./containers/ArtistContainer.container";
+import { startSetSongs } from "./redux/songs/songs.actions";
 class App extends Component {
   componentDidMount() {
     this.props.startSetArtists();
+    this.props.startSetSongs();
   }
   render() {
     return (
@@ -20,7 +22,7 @@ class App extends Component {
   }
 }
 
-export default connect(null, { startSetArtists })(App);
+export default connect(null, { startSetArtists, startSetSongs })(App);
 
 {
   /* <Route path="/artists" component={ArtistContainer} /> */

@@ -8,6 +8,7 @@ const songReducer = (state = INITIAL_STATE, action) => {
     case SongActionTypes.SET_SONGS:
       return {
         ...state,
+        songCollections: action.songs,
       };
     default:
       return state;

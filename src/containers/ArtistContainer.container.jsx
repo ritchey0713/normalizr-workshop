@@ -27,6 +27,7 @@ const mapStateToProps = (state, ownProps) => {
   // debugger;
   return {
     artists: state.artists.artistCollections,
+    songs: state.songs.songCollections,
   };
 };
 
