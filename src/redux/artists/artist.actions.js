@@ -14,7 +14,8 @@ export const startSetArtists = () => {
     fetch("http://localhost:3001/artists")
       .then((resp) => resp.json())
       .then((data) => {
-        dispatch(setArtists(data));
+        const normalizedData = normalize(data, [schema.artists]);
+        dispatch(setArtists(normalizedData));
       });
   };
 };
