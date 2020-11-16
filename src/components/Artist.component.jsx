@@ -2,10 +2,10 @@ import React from "react";
 import Song from "./Song.conponent";
 
 const Artist = ({ artists, ...otherProps }) => {
-  const artist = artists.find(
-    (artist) => artist.id === parseInt(otherProps.match.params.id)
-  );
-  console.log(artist.songs);
+  // const artist = artists.find(
+  //   (artist) => artist.id === parseInt(otherProps.match.params.id)
+  // );
+  const artist = artists[otherProps.match.params.id];
   return (
     <div>
       <br />
@@ -13,9 +13,9 @@ const Artist = ({ artists, ...otherProps }) => {
         <div>
           Artist Name: {artist.name}
           <ul>
-            {artist.songs.map((song) => (
+            {artist.songs.map((songId) => (
               <li>
-                <Song song={song} />
+                <Song id={songId} />
               </li>
             ))}
           </ul>

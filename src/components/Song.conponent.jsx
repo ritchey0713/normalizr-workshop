@@ -1,8 +1,14 @@
 import React from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 
-const Song = ({ song }) => {
+const Song = ({ id, song }) => {
   return <div>Title: {song.title}</div>;
 };
 
-export default Song;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    song: state.songs.songCollections[ownProps.id],
+  };
+};
+
+export default connect(mapStateToProps)(Song);
